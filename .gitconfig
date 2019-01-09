@@ -1,0 +1,5 @@
+[user]
+	email = rb@runix.cc
+	name = rb
+[core]
+	editor = nvim

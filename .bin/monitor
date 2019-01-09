@@ -1,0 +1,3 @@
+#!/bin/bash
+
+xrandr --output LVDS1 --auto --pos 0x0 --output VGA1 --primary --auto --pos 1920x0 --left-of LVDS1
