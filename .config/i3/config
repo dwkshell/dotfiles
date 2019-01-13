@@ -104,6 +104,11 @@ set $tag8 "8"
 set $tag9 "9"
 set $tag10 "10"
 
+# Monitor
+bindsym $mod+F9 exec monitor -a
+bindsym $mod+F10 exec monitor -m
+bindsym $mod+F11 exec monitor -l
+
 # Dual monitor
 workspace $tag1 output primary
 workspace $tag2 output primary
