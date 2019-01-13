@@ -28,6 +28,10 @@ set expandtab
 set shiftwidth=4
 set softtabstop=4
 
+" tabs per filetype
+autocmd FileType vimwiki setlocal ts=2 sw=2 expandtab
+autocmd FileType c setlocal ts=8 sw=8 expandtab
+
 " copy
 map <C-c> "*y
 
