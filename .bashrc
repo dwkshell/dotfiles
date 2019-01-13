@@ -43,7 +43,7 @@ alias diff="diff --color=auto"
 alias Dropbox="cd /home/camilo/Dropbox"
 alias Personal="cd /home/camilo/Dropbox/Personal"
 alias Projects="cd /home/camilo/Dropbox/Personal/Projects"
-alias Notes="cd /home/camilo/Dropbox/Personal/Docs/Notes"
+alias Notes="vim /home/camilo/Dropbox/Personal/Docs/Notes/index.wiki"
 alias Media="cd /home/camilo/Dropbox/Personal/Media"
 alias Pictures="cd /home/camilo/Dropbox/Personal/Media/Pictures"
 
