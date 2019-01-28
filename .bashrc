@@ -16,8 +16,8 @@ HISTSIZE= HISTFILESIZE=
 # General aliases
 alias vim="nvim"
 
-alias gitdot='git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
-alias gitpriv='git --git-dir=$HOME/.dotfiles-private/ --work-tree=$HOME'
+alias gitdot="git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
+alias gitpriv="git --git-dir=$HOME/.dotfiles-private/ --work-tree=$HOME"
 
 # Pass completion
 source /usr/share/bash-completion/completions/pass
