@@ -15,7 +15,7 @@ while getopts 'aml' OPTION; do
             xrandr --output LVDS1 --auto --primary --output VGA1 --off
             ;;
         *)
-            echo "monitor: $(basename $0) [-l] [-m] [-ml]" >&2
+            echo "monitor: $(basename $0) [-l] [-m] [-a]" >&2
             exit 1
             ;;
     esac
