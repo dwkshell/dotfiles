@@ -2,60 +2,56 @@
 
 # General ------
 set $mod Mod4
-set $term xfce4-terminal
+set $term st
 
 focus_follows_mouse no
+smart_borders on
 
 for_window [class="^.*"] border pixel 1
-
-gaps inner 8
-
-smart_borders on
-smart_gaps on
 
 floating_modifier $mod
 
 # On startup
-exec --no-startup-id /home/camilo/.bin/keymap
+exec --no-startup-id ~/.bin/keymap
 
 exec --no-startup-id pulseaudio --start
 exec --no-startup-id clipmenud
 
 exec --no-startup-id redshift -l -34:-61
-exec --no-startup-id feh --bg-fill ~/.config/wall.png
+exec --no-startup-id feh --bg-fill ~/.config/wall.jpg
 exec --no-startup-id compton --config ~/.config/compton.conf -b
 exec --no-startup-id unclutter
 
 exec --no-startup-id dropbox-cli start
 
 # Scratchpad [TO-DO!] --> not working
-for_window [title='calc'] floating enable
-for_window [title='calc'] resize set 625 400
-for_window [title='calc'] move scratchpad
+for_window [class="st-dropdown" title="calc"] floating enable 
+for_window [class="st-dropdown" title='calc'] resize set 625 400
+for_window [class="st-dropdown" title='calc'] move scratchpad
 
-bindsym $mod+c [title='calc'] scratchpad show
+bindsym $mod+c [class="st-dropdown" title='calc'] scratchpad show; [class="st-dropdown" title='calc'] move position center
 
-# exec --no-startup-id $term --title=calc --drop-down -e insect --zoom=1
+exec --no-startup-id $term -c st-dropdown -T calc -e insect
 
 # Key bindings ------
 bindsym $mod+Return exec $term
-bindsym $mod+d exec dmenu_run -fn 'Inconsolata-10' -nb '#000000' -nf '#ffffff' -sb '#666666' -sf '#ffffff'
+bindsym $mod+d exec dmenu_run -i -fn 'Terminus (TTF)-9' -nb '#000000' -nf '#ffffff' -sb '#666666' -sf '#ffffff'
 
-bindsym $mod+x exec clipmenu -i -fn 'Inconsolata-10' -nb '#000000' -nf '#ffffff' -sb '#666666' -sf '#ffffff'
+bindsym $mod+x exec clipmenu -i -fn 'Terminus (TTF)-9' -nb '#000000' -nf '#ffffff' -sb '#666666' -sf '#ffffff'
 
-bindsym $mod+p exec passmenu -i -fn 'Inconsolata-10' -nb '#000000' -nf '#ffffff' -sb '#666666' -sf '#ffffff'
+bindsym $mod+p exec passmenu -i -fn 'Terminus (TTF)-9' -nb '#000000' -nf '#ffffff' -sb '#666666' -sf '#ffffff'
 
 bindsym $mod+Shift+q kill
 
-# lock, suspend [TO-DO!]
-# bindsym Control+Mod1+l exec slock
-# bindsym Control+Mod1+s exec slock && systemctl suspend
+# lock
+bindsym XF86ScreenSaver exec slock
 
+# sound
 bindsym XF86AudioRaiseVolume exec amixer -q sset Master 3%+
 bindsym XF86AudioLowerVolume exec amixer -q sset Master 3%-
 bindsym XF86AudioMute exec amixer -q sset Master toggle
 
-# Spotify
+# Spotify media keys
 bindsym XF86AudioPlay exec dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause
 bindsym XF86AudioNext exec dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Next
 bindsym XF86AudioPrev exec dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Previous
@@ -159,7 +155,8 @@ bar {
 
 	position top
         height 20
-        font pango: Inconsolata 10
+        font pango: Terminus (TTF) 9
+        #font pango: DejaVuSans Mono Nerd Font 8
 
         tray_output none
 
