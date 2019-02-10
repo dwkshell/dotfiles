@@ -1,5 +1,8 @@
 # rb's .xinitrc
 
+# setup keyboard
+~/.bin/keymap
+
 # ssh-agent start at boot & load most used keys
 if [ -f ~/.ssh/agent.env ] ; then
     . ~/.ssh/agent.env > /dev/null
@@ -12,5 +15,30 @@ else
     ssh-add ~/.ssh/keys/github@ssh > /dev/null
 fi
 
+# dwm status bar
+~/.bin/dwm_status &
+
+# bg wallpaper
+feh --bg-fill ~/.config/wall.jpg
+
+# compositor
+compton --config ~/.config/compton.conf -b
+
+# notifications
+dunst &
+
+# clipmenu daemon
+clipmenud &
+
+# start pulseaudio
+pulseaudio --start
+
+redshift -l -34:-61 &
+unclutter &
+
+# starts with LVDS by default
+monitor -l
+
 # wm
+#exec dwm
 exec i3
