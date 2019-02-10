@@ -30,9 +30,6 @@ dunst &
 # clipmenu daemon
 clipmenud &
 
-# start pulseaudio
-pulseaudio --start
-
 redshift -l -34:-61 &
 unclutter &
 
