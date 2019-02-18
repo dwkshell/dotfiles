@@ -40,12 +40,10 @@ alias grep="grep --color=auto"
 alias diff="diff --color=auto"
 
 # Folder aliases
-alias Dropbox="cd /home/camilo/Dropbox"
-alias Personal="cd /home/camilo/Dropbox/Personal"
-alias Projects="cd /home/camilo/Dropbox/Personal/Projects"
-alias Notes="vim /home/camilo/Dropbox/Personal/Docs/Notes/index.wiki"
-alias Media="cd /home/camilo/Dropbox/Personal/Media"
-alias Pictures="cd /home/camilo/Dropbox/Personal/Media/Pictures"
+alias Docs="cd /home/camilo/Cloud/Docs"
+alias Media="cd /home/camilo/Cloud/Media"
+alias Notes="vim /home/camilo/Cloud/Notes/index.wiki"
+alias Projects="cd /home/camilo/Cloud/Projects"
 
 # Paths
 PATH=$PATH:$HOME/.bin
