@@ -30,12 +30,10 @@ dunst &
 # clipmenu daemon
 clipmenud &
 
-redshift -l -34:-61 &
 unclutter &
 
 # starts with LVDS by default
 monitor -l
 
 # wm
-#exec dwm
-exec i3
+exec dwm
